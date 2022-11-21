@@ -94,7 +94,7 @@ const deletePatient = async (req, res) => {
     if(!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({error: 'No record found!'})
      }
- 
+     
      const patientinfo = await patientInfo.findOneAndDelete({_id: id})
 
      if (!patientinfo) {

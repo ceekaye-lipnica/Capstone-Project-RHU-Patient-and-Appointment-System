@@ -16,6 +16,10 @@ export const patientReducer = (state, action) => {
             return {
                 info : state.info.filter((w) => w.id !== action.payload._id)
             };
+        case 'UPDATE_PATIENT':
+            return {
+                info : state.info.filter((w) => w.id !== action.payload._id)
+            };
         default:
             return state;
     };

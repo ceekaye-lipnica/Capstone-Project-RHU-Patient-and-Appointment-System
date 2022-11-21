@@ -1,13 +1,20 @@
 import React from 'react'
+import { Button, Modal} from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { UsePatientContext } from '../../../hooks/usePatientContext'
 
 
 const PatientRecord = () => {
-   
+
     const [item, setItem] = useState([]);
+    const [RowData, SetRowData] = useState([]);
     const {dispatch} = UsePatientContext()
+
+    // FOR EDIT MODAL
+    const handleEditShow = () => { SetEditShow(true) }
+    const handleEditClose = () => { SetEditShow(false) }
+
 
     // FOR UPDATE AND DELETE 
     const [id ,setId] = useState("");
@@ -53,8 +60,7 @@ const PatientRecord = () => {
       //     })
 
       // const response = await axios.delete(`http://localhost:3000/portal/health/${id}`);
-      //     .then(response.data)
-       
+      //     .then((response) => response.data())
       //     if (response.data){
       //       console.log("success"); 
       //     }
@@ -72,13 +78,13 @@ const PatientRecord = () => {
       
           if (response.ok) {
             dispatch({type:'DELETE_PATIENT', payload: json})
-
           }
 
   }
 
   //EDIT FUNCTION 
-//   const handleEdit = () =>{
+  // NEXT NA GAGAWIN AY EDIT MODAL 
+  const handleEdit = async () =>{
 //     const url =   `http://localhost:3000/portal/health/${id}`
 //     const Credentials = {fname, mname, lname, gender, age, address, contact}
 //     axios.put(url, Credentials)
@@ -96,9 +102,18 @@ const PatientRecord = () => {
 //         .catch(err => {
 //             console.log(err)
 //         })
-// }
 
- 
+          const response = await fetch(`http://localhost:3000/portal/health/${id}` , {
+            method: "UPDATE"
+          });
+
+          const json = await response.json();
+
+          if (response.ok) {
+            dispatch({type:'UPDATE_PATIENT', payload: json})
+          }
+
+}
 
   return (
     <div className='tbl-patient'>
@@ -114,7 +129,6 @@ const PatientRecord = () => {
                 <th>Contact</th>
                 <th>Action</th>
                 
-
             </tr>
             </thead>
             <tbody>
@@ -129,7 +143,8 @@ const PatientRecord = () => {
                     <td>{item.contact}</td>
                     <td>
                       <button>View</button>
-                      {/* <button onClick={()=> {handleEditShow(SetRowData(item),setId(item._id))}}>Edit</button> */}
+                      {/* <button onClick={() => {handleEdit(setId(item._id))}}>Edit</button> */}
+                      <Button size='sm' variant='warning' onClick={()=> {handleEditShow(SetRowData(item),setId(item._id))}}>Edit</Button>|
                       <button onClick={() => {handleDelete(setId(item._id))}}>Delete</button>
                       
                     </td>
@@ -138,7 +153,13 @@ const PatientRecord = () => {
             </tbody>
         </table>
     </div>
+    <div className="edit-modal">
+        <Modal>
+
+        </Modal>
+
+    </div>
   )
-}
+
 
 export default PatientRecord
