@@ -1,3 +1,4 @@
+import React from 'react'
 import { UsePatientContext } from '../hooks/usePatientContext'
 import {FaTrashAlt} from 'react-icons/fa'
 import {GrView} from 'react-icons/gr'
@@ -33,8 +34,6 @@ const PatientDetails = ({ patientinfo }) => {
         }
     }
 
-    
-
 
     return (
         <div className="patient-details">
@@ -47,8 +46,8 @@ const PatientDetails = ({ patientinfo }) => {
 
             <span  onClick={handleClick}><FaTrashAlt className='trash-icon'/></span>
 
-            <div className="view-btn"> <Link to="/viewconsult"> View <GrView className='view-icon'/> </Link></div>
-            <div className="edit-btn"> <Link to="/addconsult"> Edit <GrEdit className='edit-icon'/> </Link></div>
+            <div className="view-div"> <Link to="/viewconsult"> <p className="view-btn"> View </p> <GrView className='view-icon'/> </Link></div>
+            <div className="edit-div"> <Link to="/addconsult"> <p className="edit-btn"> Add </p><GrEdit className='edit-icon'/> </Link></div>
             
 
         </div>

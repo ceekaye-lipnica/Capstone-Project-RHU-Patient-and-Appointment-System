@@ -1,4 +1,6 @@
+import React from 'react';
 import { createContext, useReducer } from 'react'
+
 
 export const PatientContext = createContext()
 
@@ -16,12 +18,12 @@ export const patientReducer = (state, action) => {
             return {
                 info : state.info.filter((w) => w.id !== action.payload._id)
             };
-        case 'UPDATE_PATIENT':
-            return {
-                info : state.info.filter((w) => w.id !== action.payload._id)
-            };
+        // case 'UPDATE_PATIENT':
+        //     return {
+        //         info : state.info.filter((w) => w.id !== action.payload._id)
+        //     };
         default:
-            return state;
+            return state;  // eslint-disable-next-line
     };
 }
 

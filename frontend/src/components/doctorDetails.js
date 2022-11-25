@@ -1,3 +1,4 @@
+import React from 'react';
 import { UseDoctorContext } from '../hooks/useDoctorContext'
 import {FaTrashAlt} from 'react-icons/fa'
 //import { UseAuthContext } from '../hooks/useAuthContext'

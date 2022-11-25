@@ -50,6 +50,7 @@ header a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
+
 .doctor-details, .consult-details {
   background: #fff;
   border-radius: 4px;
@@ -140,6 +141,30 @@ input.error{
 .trash-icon {
   color: red;
 }
+
+/* BUTTON */
+
+.edit-btn, .view-btn {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-icon, .view-icon {
+  color: orange;
+  border: orange;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.btn-report {
+  border: orange;
+  border-radius: 5%;
+  font-size: medium;
+  
+
+}
+
+
 
 /* navbar */
 nav {

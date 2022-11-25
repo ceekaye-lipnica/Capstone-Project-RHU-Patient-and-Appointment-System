@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from "react"
 import { UseDoctorContext } from "../hooks/useDoctorContext"
 import barangays from '../data/barangay'
@@ -144,7 +145,7 @@ const DoctorForm = () => {
 
             <label>Contact Number: </label>
             <input 
-                type="tel" 
+                type="number" 
                 maxLength="11"
                 onChange={(e) => setContact(e.target.value)}
                 value={contact}

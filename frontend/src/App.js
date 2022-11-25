@@ -1,4 +1,6 @@
+import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 // import { Navigate} from 'react-router-dom'
 // import { UseAuthContext } from './hooks/useAuthContext';
@@ -54,10 +56,7 @@ function App() {
             <Route path="/viewconsult" element={<ViewConsult />} />
             <Route path="/tablepatient" element={<TablePatient />} />
             <Route path="/patientRecord" element={<PatientRecord />} />
-           
             
-
-
             <Route path="*" element={<Page404 />} />
 
             {/* <Route path= "/" element={user ? <Home /> : <Navigate to="/login" />} />
@@ -69,6 +68,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

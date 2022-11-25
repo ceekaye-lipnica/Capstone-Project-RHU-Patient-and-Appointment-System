@@ -62,7 +62,7 @@ export const SideNavData = [
         subNav: [
             {
                 title: "Add Report",
-                path: "/#",
+                path: "/tablepatient",
                 icon: <FiIcons.FiFilePlus />,
             },
             {
@@ -74,7 +74,7 @@ export const SideNavData = [
     },
     {
         title: "Search",
-        path: "/patientRecord",
+        // path: "/patientRecord",
         icon: <FaIcons.FaSearch />,
         iconClosed: <RiIcons.RiArrowDropDownFill />,
         iconOpen: <RiIcons.RiArrowDropUpFill />

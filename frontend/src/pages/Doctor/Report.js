@@ -1,12 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+// import * as MdIcons from 'react-icons/md';
 
 function Report() {
   return (
 
-  <div className='donut-gender'>
+  <div className='report-page'>
+    <button className='btn-report'> <Link to="/"> BACK TO DASHBOARD </Link> </button>
+    {/* <MdIcons.MdArrowBack><Link to="/"> BACK </Link></MdIcons.MdArrowBack>  */}
 
       {/* pie chart - gender  */}
-    <div className='reports'>
+    <div className='donut-gender'>
       <iframe 
           title="donut-gender"
           style={{
@@ -52,6 +56,25 @@ function Report() {
           src="https://charts.mongodb.com/charts-capstone-rdggn/embed/charts?id=636f9e9e-02c9-4000-80d9-f6da73e7c7ea&maxDataAge=10&theme=light&autoRefresh=true"></iframe>
 
   </div>
+
+
+    {/* CHART - SERVICES */}
+    <div className='chart-services'>
+    <iframe 
+    title='chartservices'
+    style=
+   {{ background: "#FFFFFF",
+    border: "none",
+    borderRadius: "2px",
+    boxShadow:" 0 2px 10px 0 rgba(70, 76, 79, .2)",
+    width: "100%",
+    height: "400px",  }}
+
+    src="https://charts.mongodb.com/charts-capstone-rdggn/embed/charts?id=637fb005-733c-47dd-837a-4e2520db6d40&maxDataAge=10&theme=light&autoRefresh=true"> </iframe>
+
+    </div>
+
+
 
 
 

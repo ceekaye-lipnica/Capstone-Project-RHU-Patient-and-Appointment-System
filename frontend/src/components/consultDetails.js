@@ -1,3 +1,4 @@
+import React from 'react'
 import { UseConsultContext } from '../hooks/useConsultContext'
 import {FaTrashAlt} from 'react-icons/fa'
 //import { UseAuthContext } from '../hooks/useAuthContext'
@@ -37,17 +38,17 @@ const ConsultDetails = ({ consultinfo }) => {
             {/* consultinfo  */}
            
             <p><strong> Purpose of Visit:</strong> {consultinfo.purpose}</p>
-            <p><strong> Diagnosis:</strong> {consultinfo.diagnosis}</p>
-            <p><strong> Description:</strong> {consultinfo.description}</p>
+            {/* <p><strong> Diagnosis:</strong> {consultinfo.diagnosis}</p>
+            <p><strong> Description:</strong> {consultinfo.description}</p> */}
             <p><strong> Prescription:</strong> {consultinfo.treatment}</p>
             <p><strong> Blood Pressure:</strong> {consultinfo.bp}</p>
             <p><strong> Bloodsugar:</strong> {consultinfo.bloodsugar}</p>
-            <p><strong> Weight:</strong> {consultinfo.weight}</p>
-            <p><strong> Height:</strong> {consultinfo.height}</p>
+            <p><strong> Weight:</strong> {consultinfo.weight + "kg"}</p>
+            <p><strong> Height:</strong> {consultinfo.height + "cm"}</p>
             <p><strong> Attending Physician:</strong> {consultinfo.attendingDoc}</p>
             {/* <p>{formatDistanceToNow(new Date (doctorinfo.createdAt), {addSuffix: true})}</p> */}
 
-            <span  onClick={handleClick}><FaTrashAlt className='trash-icon'/></span>
+            <span onClick={handleClick}><FaTrashAlt className='trash-icon'/></span>
 
         </div>
     )

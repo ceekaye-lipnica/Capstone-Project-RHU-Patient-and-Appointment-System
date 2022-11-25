@@ -1,4 +1,5 @@
 import { useState } from "react"
+import React from 'react';
 import{ UseConsultContext } from "../hooks/useConsultContext"
 import { Link } from 'react-router-dom'
 import RHUServices from "../data/rhuServices"
@@ -9,8 +10,8 @@ const ConsultForm = () => {
         // const {user} = UseAuthContext()
 
         const [purpose, setPurpose] = useState('')
-        const [diagnosis, setDiagnosis] = useState('')
-        const [description, setDescription] = useState('')
+        // const [diagnosis, setDiagnosis] = useState('')
+        // const [description, setDescription] = useState('')
         const [treatment, setTreatment] = useState('')
         const [bp, setBp] = useState('')
         const [weight, setWeight] = useState('')
@@ -34,7 +35,8 @@ const ConsultForm = () => {
             //     return
             // }
 
-            const consultinfo = {purpose, diagnosis, description, treatment, bp, weight, height, bloodsugar, attendingDoc}
+            // const consultinfo = {purpose, diagnosis, description, treatment, bp, weight, height, bloodsugar, attendingDoc}
+            const consultinfo = {purpose, treatment, bp, weight, height, bloodsugar, attendingDoc}
 
             const response = await fetch('/portal/consult', {
                 method: 'POST',
@@ -55,8 +57,8 @@ const ConsultForm = () => {
                 setError(null)
                 // setEmptyFields([])
                 setPurpose('')
-                setDiagnosis('')
-                setDescription('')
+                // setDiagnosis('')
+                // setDescription('')
                 setTreatment('')
                 setBp('')
                 setWeight('')
@@ -90,21 +92,21 @@ const ConsultForm = () => {
             ))}
           </select> 
 
-            <label>Diagnosis: </label>
+            {/* <label>Diagnosis: </label>
             <input 
                 type="text"
                 onChange={(e) => setDiagnosis(e.target.value)}
                 value={diagnosis}
                 // className = {emptyFields.includes('mname') ? 'error': ''}
-            />
-
+            /> */}
+{/* 
             <label>Description: </label>
             <input 
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
                 // className = {emptyFields.includes('lname') ? 'error': ''}
-            />
+            /> */}
 
             <label>Prescription: </label>
             <input 
@@ -151,7 +153,7 @@ const ConsultForm = () => {
                 <option value="" selected="selected" hidden="hidden">
                   Choose here
                 </option>
-                <option value = "Dra" selected> Dra. Katherine Pulgar-Ruby </option>
+                <option value = "Dra. Katherine Pulgar-Ruby" selected> Dra. Katherine Pulgar-Ruby </option>
                 {/* className = {emptyFields.includes('attendingDoc') ? 'error': ''} */}
             </select>
             
