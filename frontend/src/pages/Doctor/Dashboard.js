@@ -39,7 +39,7 @@ const Count = () => {
         </div>
       </div> */}
 
-      {/* chart for count patients */}
+      {/* CHARTS FOR COUNT PATIENT */}
       <iframe 
 
         title='count-patient'
